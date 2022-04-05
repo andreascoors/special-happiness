@@ -18,7 +18,6 @@ import edu.iustudy.pwa.fallstudie.projectmanagement.repository.ProjekteRepositor
  *
  */
 @Service
-@Transactional
 public class PmFallstudieService {
 
 	@Autowired
@@ -28,9 +27,8 @@ public class PmFallstudieService {
 	@Autowired
 	MitarbeiterRepository mitarbeiterRepo;
 
-	Iterable<Projekte> findeAlleProjekte() {
-
+	@Transactional
+	public Iterable<Projekte> findeAlleProjekte() {
 		return projektRepo.findAll();
-
 	}
 }
