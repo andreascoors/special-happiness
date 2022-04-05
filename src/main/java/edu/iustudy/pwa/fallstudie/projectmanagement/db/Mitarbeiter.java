@@ -3,13 +3,17 @@
  */
 package edu.iustudy.pwa.fallstudie.projectmanagement.db;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,7 +25,6 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@Builder
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,9 +33,11 @@ public class Mitarbeiter{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotEmpty
 	private String vorname;
+	@NotEmpty
 	private String nachname;
-	private java.sql.Date geburtsdatum;
+	@Temporal(TemporalType.DATE)
+	private Date geburtsdatum;
 	// TODO ... weitere
-
 }
