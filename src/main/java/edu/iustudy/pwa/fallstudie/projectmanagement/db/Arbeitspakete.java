@@ -20,8 +20,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
+ * id, name, beschreibung, start-, enddatum, aufwand, projekt, mitarbeiter-Liste
  * @author AndreasCoors
- *
  */
 @Getter
 @Setter
@@ -33,7 +33,7 @@ import lombok.ToString;
 public class Arbeitspakete {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String name;
 	private String beschreibung;
 	private java.sql.Date startDatum;

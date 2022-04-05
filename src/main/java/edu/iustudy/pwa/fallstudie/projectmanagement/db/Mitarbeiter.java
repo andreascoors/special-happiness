@@ -16,8 +16,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
+ * id, vor-, nachname, geburtsdatum
  * @author AndreasCoors
- *
  */
 @Getter
 @Setter
