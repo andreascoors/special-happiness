@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,6 +39,8 @@ public class Arbeitspakete {
 	private java.sql.Date startDatum;
 	private java.sql.Date endDatum;
 	private int aufwand;
+	@OneToOne
+	private Projekte projekt;
 	@OneToMany
-	private List<Mitarbeiter> verantwortlich;
+	private List<Mitarbeiter> mitarbeiter;
 }
