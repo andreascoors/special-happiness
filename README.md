@@ -1,3 +1,9 @@
+### [To Do - Kanbanboard (Projects)](https://github.com/andreascoors/special-happiness/projects/1)
+
+### [Tickets, Fehler, Ideen (Issues)](https://github.com/andreascoors/special-happiness/issues)
+<!--
+### [Eclipse Integration](https://github.com/andreascoors/special-happiness/...)
+-->
 # Projekt Fallstudie (ENTWURF)
 
 ## Ziel
