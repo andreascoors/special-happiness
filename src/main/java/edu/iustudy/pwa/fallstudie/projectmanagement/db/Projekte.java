@@ -37,7 +37,7 @@ public class Projekte {
 	private java.sql.Date startDatum;
 	private java.sql.Date endDatum;
 	@OneToMany
-	private List<Mitarbeiter> zugehörig;
+	private List<Mitarbeiter> mitarbeiter;
 	
 	
 }
