@@ -12,8 +12,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./database-phpmyadmin/initdb:/docker-entrypoint-initdb.d
-      - ./mysql/database-phpmyadmin/mysql:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d
+      - ./mysql:/var/lib/mysql
       
   phpmyadmin:
     image: phpmyadmin
