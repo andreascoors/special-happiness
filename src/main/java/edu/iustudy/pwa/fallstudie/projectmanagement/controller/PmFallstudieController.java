@@ -3,10 +3,10 @@
  */
 package edu.iustudy.pwa.fallstudie.projectmanagement.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +26,10 @@ public class PmFallstudieController {
 	@GetMapping("/projekte") 
 	Iterable<Projekte> getProjekte() {
 		return pmfsService.findeAlleProjekte();
+	}
+	
+	@PostMapping("/projekte")
+	void createProjekt(@RequestBody Projekte projekt) {
+		pmfsService.erstelleProjekt(projekt);
 	}
 }

@@ -31,4 +31,11 @@ public class PmFallstudieService {
 	public Iterable<Projekte> findeAlleProjekte() {
 		return projektRepo.findAll();
 	}
+	
+	@Transactional
+	public long erstelleProjekt(Projekte projekt) {
+		if(!projekt.getMitarbeiter().isEmpty() && projekt.getMitarbeiter() != null)
+			throw new IllegalArgumentException();
+		return projektRepo.save(projekt).getId();		
+	}
 }
