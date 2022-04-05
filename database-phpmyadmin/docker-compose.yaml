@@ -1,0 +1,28 @@
+version: "3.5"
+services:
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password --sql_mode=""
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+      - MYSQL_DATABASE=special-happiness
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database-phpmyadmin/initdb:/docker-entrypoint-initdb.d
+      - ./mysql/database-phpmyadmin/mysql:/var/lib/mysql
+      
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 33006:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+      
