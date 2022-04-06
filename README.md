@@ -39,24 +39,6 @@ Nur zugehörige Mitarbeiter*innen können die Projektdaten sehen, wenn sie sich 
 * CRUD-Operationen auf alle Entitäten die für Anwender erreichbar sind
 * Pflege von Basislisten
 
-### Sicherheit
-
-In diesem Projekt sind folgende Restriktionen eingestellt
-
-* Der main-Branch ist *protected*
-	* alle Commitments müssen auf einen *non-protected* Branch erfolgen
-	* *non-protected* sind alle Branches außer main
-	* in den main-Branch kann nur gemerged werden, wenn folgende Bedingungen erfüllt sind
-		* ein Pull-Request wurde erstellt
-		* dieser muss Reviewed und mit *no changes requested* approved werden
-		* weitere Commits auf den refenzierten Branch erfordern erneutes *approval*
-	* alle Change-Requests und Kommentare im PR müssen als *resolved* gekennzeichnet sein
-	* Commits müsssen verfiziert sein, d.h. von einem registrierten User stammen
-	* *Require linear history* \*
-* alle o.g. Regeln gelten für Collaboratoren, Administratoren sowie Owner
-
-\* diese Regel kann bei Bedarf zeitweise oder dauerhaft ausgesetzt werden
-
 # Anforderung (Originaltext)
 
 *Rahmenthema „Planen und realisieren Sie eine Web-Anwendung … “*
