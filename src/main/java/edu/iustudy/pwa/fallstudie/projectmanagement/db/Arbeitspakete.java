@@ -8,11 +8,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
@@ -25,19 +23,19 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * id, name, beschreibung, start-, enddatum, aufwand, projekt, mitarbeiter-Liste
+ * id, name, beschreibung, start-, enddatum, aufwand, projekt, mitarbeiter
  * @author AndreasCoors
  */
 @Getter
 @Setter
-@Builder
 @ToString
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Arbeitspakete {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private Long id;
 	@NotEmpty
 	@Column(unique=true) 
@@ -53,6 +51,6 @@ public class Arbeitspakete {
 	@ManyToOne
 	@NotEmpty
 	private Projekte projekt;
-	@OneToOne
+	@ManyToOne
 	private Mitarbeiter mitarbeiter;
 }
