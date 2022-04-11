@@ -3,14 +3,19 @@
  */
 package edu.iustudy.pwa.fallstudie.projectmanagement.db;
 
-import java.util.List;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,27 +25,38 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
+
+ * id, name, beschreibung, start-, enddatum, aufwand, projekt, mitarbeiter
  * @author AndreasCoors
- *
  */
 @Getter
 @Setter
-@Builder
 @ToString
+@Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Arbeitspakete {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+
+	@GeneratedValue
+	private Long id;
+	@NotEmpty
+	@Column(unique=true) 
 	private String name;
+	@Lob
 	private String beschreibung;
-	private java.sql.Date startDatum;
-	private java.sql.Date endDatum;
+	@Temporal(TemporalType.DATE)
+	private Date startDatum;
+	@Temporal(TemporalType.DATE)
+	private Date endDatum;
+	@NotEmpty
 	private int aufwand;
-	@OneToOne
+	@ManyToOne
+	@NotEmpty
 	private Projekte projekt;
-	@OneToMany
-	private List<Mitarbeiter> mitarbeiter;
+	@ManyToOne
+	private Mitarbeiter mitarbeiter;
+
 }
