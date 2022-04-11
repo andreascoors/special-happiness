@@ -3,6 +3,7 @@
  */
 package edu.iustudy.pwa.fallstudie.projectmanagement.db;
 
+
 import java.util.Date;
 
 import javax.persistence.Entity;

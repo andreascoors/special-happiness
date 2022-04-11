@@ -16,6 +16,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -30,8 +31,8 @@ import lombok.ToString;
  */
 @Getter
 @Setter
-@ToString
 @Builder
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

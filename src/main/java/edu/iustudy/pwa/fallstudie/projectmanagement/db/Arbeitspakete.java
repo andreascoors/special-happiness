@@ -3,6 +3,7 @@
  */
 package edu.iustudy.pwa.fallstudie.projectmanagement.db;
 
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,6 +16,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,6 +25,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
+
  * id, name, beschreibung, start-, enddatum, aufwand, projekt, mitarbeiter
  * @author AndreasCoors
  */
@@ -30,11 +33,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Arbeitspakete {
 	@Id
+
 	@GeneratedValue
 	private Long id;
 	@NotEmpty
@@ -53,4 +58,5 @@ public class Arbeitspakete {
 	private Projekte projekt;
 	@ManyToOne
 	private Mitarbeiter mitarbeiter;
+
 }
