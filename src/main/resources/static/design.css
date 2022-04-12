@@ -1,0 +1,93 @@
+/*
+    Zuerst setzten wir die Eigenschaften für margin, padding und border zurück, 
+    sodass Browserabweichungen ausgeglichen werden können.
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+/*
+    Für den kompletten HTML Bereich setzen wir die Standard Schrift und verpassen
+    der Seite noch eine Hintergrundfarbe.
+*/
+html {
+    background-color: #fff; /* im Internet Explorer ist manchmal die Standard Hintergrundfarbe nicht weiß, deshalb setzen wir es manuell */
+    color: #111; /* auch hier eine Farbe ähnelnd zu schwarz, aber nicht so grell */
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+/*
+    Nun kommt der Header: Wir werden ihm ein schönes Hintergrundbild verpassen.
+    Damit dieses auch komplett angezeigt wird, setzte ich als Höhe die Höhe des Bildes.
+    Danach platziere ich den Text nach rechts oben in die Ecke und setze eine Schriftfarbe.
+*/
+#title {
+    /* 
+        Als Hintergrundbild setzte ich header.jpg.
+        Da dieses aber nicht breit genug ist, setzte ich zusätzlich
+        als Hintergrundfarbe den Blauton, den der Hintergrund im Bild hat.
+        Da dessen HEX-Code sehr komplex ist, nutze ich die RGB Angabe von CSS
+    */
+    background: rgb(115,183,254) url(header.jpg) no-repeat top left;
+    height: 170px; /* 170px + 10px (padding) gibt die 180px des Bildes */
+    text-align: right;
+    padding: 10px 15px 0px 0px;
+    font-weight: normal;
+}
+
+/*
+    Nun kommt der Schlagschatten.
+    Dieser besteht einfach aus einer Höhe und einem Hintergrund.
+*/
+#border {
+    background: url(schatten.png) repeat-x top left;
+    height: 12px; 
+}
+
+/*
+    Zuerst bekommt die Navi ihren richtigen Abstand zu den anderen Elementen.
+*/
+#navi {
+    margin: 1em 1.3em;
+}
+
+/*
+    Und nun bekommen auch noch die Listenpunkte ihr styling.
+    Mit 'display' werden sie horizontal angeordnet und ihre Listenpunkte werden entfernt.
+*/
+#navi li {
+    display: inline;
+    list-style-type: none;
+    padding: 0px 1em 0px 0px;
+}
+
+/*
+    Da die Listenpunkte Links enthalten, werden die nichtmal extra formatiert.
+*/
+#navi a, #navi a:active, #navi a:visited, #navi a:hover {   
+    /* zwar aus Usability nicht korrekt, aber in der Navigation vertretbar */
+     text-decoration: none; 
+}
+
+/*
+    Und zu guter letzt noch der Content. 
+    Am Container selbst wird nicht viel getan, aber die einzelnen Elemente darin müssen
+    wieder ihren 'margin' bekommen, den wir am Anfang zurück gesetzt haben.
+*/
+#content {
+    margin: 0px 1.3em;
+}
+
+#content h2, #content p {
+    margin: 1em 0px;
+}
+
+/*
+    damit das ganze noch ein bisschen bunter wird, bekommt die Überschrift die selbe Farbe,
+    wie der Hintergrund des Headers.
+*/
+#content h2 {
+    color: rgb(115,183,254);
+}
